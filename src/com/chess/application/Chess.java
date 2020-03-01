@@ -48,11 +48,11 @@ public class Chess extends Application {
 	
 	@Override
 	public void stop() throws Exception {
-	super.stop();
-	if (controller != null) {
-		controller.handleExit(null); 
-	}
-	Platform.exit();
+		super.stop();
+		if (controller != null) {
+			controller.handleExit(null); 
+		}
+		Platform.exit();
 		System.exit(0);
 	}
 
