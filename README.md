@@ -6,21 +6,21 @@ The goal was to create a user-friendly game which allows the user to play agains
 Also, games can be exported or imported in FEN or PGN.
 
 ## Table of Contents
-1. [About the game](#about-the-game)<br>
-	1.1 [Before you start the game](#before-you-start-the-game)<br>
-	1.2 [The game](#the-game)<br>
-		1.2.1 [The AI opponent](#the-ai-opponent)<br>
-		1.2.2 [Chess notations](#chess-notations)<br>
-		1.2.3 [Editing a game](#editing-a-game)<br>
-		1.2.4. [Thoughts about this project](#thoughts-about-this-project)<br>
-2. [Project structure](#project-structure)<br>
-3. [How to get it](#how-to-get-it)<br>
-4. [How to run it](#how-to-run-it)<br>
-	4.1 [Within the IDE](#within-the-ide)<br>
-	4.2 [From a Jar file](#from-a-jar-file)<br>
-		4.2.1 [Build Jar in Eclipse IDE](#build-jar-in-eclipse-ide)<br>
-		4.2.2 [Build Jar in Intellij IDE](#build-jar-in-intellij-ide)<br>
-		4.2.3 [Execute Jar](#execute-jar)<br>
+1. [About the game](#about-the-game)  
+	1.1 [Before you start the game](#before-you-start-the-game)  
+	1.2 [The game](#the-game)  
+		1.2.1 [The AI opponent](#the-ai-opponent)  
+		1.2.2 [Chess notations](#chess-notations)  
+		1.2.3 [Editing a game](#editing-a-game)  
+		1.2.4. [Thoughts about this project](#thoughts-about-this-project)  
+2. [Project structure](#project-structure)  
+3. [How to get it](#how-to-get-it)  
+4. [How to run it](#how-to-run-it)  
+	4.1 [Within the IDE](#within-the-ide)  
+	4.2 [From a Jar file](#from-a-jar-file)  
+		4.2.1 [Build Jar in Eclipse IDE](#build-jar-in-eclipse-ide)  
+		4.2.2 [Build Jar in Intellij IDE](#build-jar-in-intellij-ide)  
+		4.2.3 [Execute Jar](#execute-jar)  
 
 
 ## About the game
@@ -59,18 +59,18 @@ Example: On the highest difficulty setting we have a recursion depth of 4, while
 As the recursion depth has a huge impact on the speed of the caluclations (which increases exponentially), the maximum depth of 4 seemed a suitable compromise to get a more-or-less smart opponent, without having to wait 100 years for the next move.
 
 #### Chess notations
-During the game, the moves are logged to the console and can be exported as html file. Here, the __long algebraic notation (LAN)__ is used.<br>
+During the game, the moves are logged to the console and can be exported as html file. Here, the __long algebraic notation (LAN)__ is used.  
 Example for LAN: 
 
      e2-e4
 
-For importing and exporting games, the __FEN__ and __PGN__ notations are used. These notations are widely used for chess games.<br><br>
-The __FEN__ notation is a very compact one-line-code for a current board situation. It is useful if a board state should be quickly copied to be recreated later and/or in another chess program.<br>
+For importing and exporting games, the __FEN__ and __PGN__ notations are used. These notations are widely used for chess games.    
+The __FEN__ notation is a very compact one-line-code for a current board situation. It is useful if a board state should be quickly copied to be recreated later and/or in another chess program.  
 Example for FEN: 
 
     rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 
-The __PGN__ notation is more complex. It contains metadata about the game (players, location, round, etc.) and the complete list of moves. This means, a whole game can be recreated step by step, which is useful if you want to do analyzes.<br>
+The __PGN__ notation is more complex. It contains metadata about the game (players, location, round, etc.) and the complete list of moves. This means, a whole game can be recreated step by step, which is useful if you want to do analyzes.  
 Example for PGN:
 
     [Event "Casual waste of time"]
