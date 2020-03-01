@@ -56,13 +56,33 @@ The algorithm takes following to account:
 Depending on the rule and difficulty settings, the behavior of the AI opponent will change accordingly.
 Example: On the highest difficulty setting we have a recursion depth of 4, while on the lowest difficulty setting we have a no recursion at all.
 
-As the recursion depth has a hughe impact on the speed of the caluclations (which increases exponentially), the maximum depth of 4 seemed a suitable compromise to get a more-or-less smart opponent, without having to wait 100 years for the next move.
+As the recursion depth has a huge impact on the speed of the caluclations (which increases exponentially), the maximum depth of 4 seemed a suitable compromise to get a more-or-less smart opponent, without having to wait 100 years for the next move.
 
 #### Chess notations
-During the game, the moves are logged to the console and can be exported as html file. Here, the <b>long algebraic notation (LAN)</b> is used.
+During the game, the moves are logged to the console and can be exported as html file. Here, the <b>long algebraic notation (LAN)</b> is used.<br>
+Example for LAN: 
+
+     e2-e4
+
 For importing and exporting games, the <b>FEN</b> and <b>PGN</b> notations are used. These notations are widely used for chess games.<br>
 The FEN notation is a very compact one-line-code for a current board situation. It is useful if a board state should be quickly copied to be recreated later and/or in another chess program.<br>
-The PGN notation is more complex. It contains metadata about the game (players, location, round, etc.) and the complete list of moves. This means, a whole game can be recreated step by step, which is useful if you want to do analyzes.
+Example for FEN: 
+
+    rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+
+The PGN notation is more complex. It contains metadata about the game (players, location, round, etc.) and the complete list of moves. This means, a whole game can be recreated step by step, which is useful if you want to do analyzes.<br>
+Example for PGN:
+
+    [Event "Casual waste of time"]
+    [Site "Your cave, SWITZERLAND"]
+    [Date "2019.12.08"]
+    [Round "2"]
+    [White "Thought, Deep"]
+    [Black "Blue, Deep"]
+    [Result "0:1"]
+    
+    1. f4 d5 2. Nc3 d4 3. Nb5 a6 4. Na3 Bg4 5. h3 Bh5 6. d3 Nd7
+    7. Bd2 e6 8. Nc4 Qh4+ 9. g3 Qxg3# 0:1
 
 #### Editing a game
 I really hated to implement this feature, as in a real chess game, steps should not be undone. Still, it's cool for whait-what-happened-moments or analyzing already played games.
@@ -76,10 +96,10 @@ Some other time, I will do further work here or start again from scratch.
 
 ## Project structure
 
-* ``application``     this package contains the main method (in ``Chess.java``), as well as gui related classes
-* ``model``               enums, container classes, data classes
-* ``resources``       text and image files
-* ``root``        	       contains the 'game engine' (pieces, board, game handling, AI logic)
+* ``com.chess.application``     this package contains the main method (in ``Chess.java``), as well as gui related classes
+* ``com.chess.model``               enums, container classes, data classes
+* ``com.chess.resources``        text and image files
+* ``com.chess.root``        	       contains the 'game engine' (pieces, board, game handling, AI logic)
 
 ## How to get it
 
@@ -106,6 +126,8 @@ To fix it, do following steps:
 6. Run the game again
 
 ### From a Jar file
+You can download the Jar file directly from the <a href="https://github.com/lpapailiou/chess/tree/master/classes/artifacts/chess_jar" target="_blank">artifacts folder</a>. Alternatively, you can build it yourself.
+
 #### Build Jar in Eclipse IDE
 1. Right click on the project
 2. Choose ``Export``
@@ -123,7 +145,7 @@ To fix it, do following steps:
 4. Click ``Ok`` twice
 5. Go to ``Build > Build Artifacts...``
 6. Select ``Build``
-7. The Jar file is now added to the ``target folder`` within the project structure
+7. The Jar file is now added to the ``target`` folder within the project structure
 
 #### Execute Jar
 Double click on the Jar file directly. 
