@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chess.application.GameController">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Game">
+					<items>
+						<MenuItem fx:id="newGameItem" mnemonicParsing="false" onAction="#handleSettings" text="New game" />
+					</items>
+					<items>
+						<MenuItem fx:id="restartItem" mnemonicParsing="false" onAction="#handleRestart" text="Restart" />
+					</items>
+					<items>
+						<SeparatorMenuItem mnemonicParsing="false"/>
+					</items>
+					<items>
+                  		<MenuItem fx:id="fenCopyItem" mnemonicParsing="false" onAction="#handleFenCopy" text="Copy FEN" />
+                  	</items>
+                  	<items>
+                  		<MenuItem fx:id="pngCopyItem" mnemonicParsing="false" onAction="#handlePgnCopy" text="Copy PGN" />
+                  	</items>
+					<items>
+                  		<MenuItem fx:id="pgnExportItem" mnemonicParsing="false" onAction="#handlePgnExport" text="Export PGN" />
+                  	</items>
+                  	<items>
+                  		<MenuItem fx:id="boardCopyItem" mnemonicParsing="false" onAction="#handleBoardCopy" text="Copy board" />
+                  	</items>
+                  	<items>
+						<SeparatorMenuItem mnemonicParsing="false"/>
+					</items>
+                  	<items>
+                    	<MenuItem fx:id="exitItem" mnemonicParsing="false" onAction="#handleExit" text="Quit" />
+                  	</items>
+     			</Menu>
+     			<Menu mnemonicParsing="false" text="Edit">
+					<items>
+						<MenuItem fx:id="rotateBoardItem" mnemonicParsing="false" onAction="#handleRotate" text="Rotate board" />
+					</items>
+					<items>
+						<SeparatorMenuItem mnemonicParsing="false"/>
+					</items>
+					<items> 
+						<MenuItem fx:id="editModeStartItem" mnemonicParsing="false" onAction="#handleStartEditMode" text="Start editing" />
+					</items>
+                  	<items>
+                    	<MenuItem fx:id="editModeStopItem" mnemonicParsing="false" onAction="#handleLeaveEditMode" text="Stop editing" />
+                  	</items>
+     			</Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                	<items>
+                  		<MenuItem fx:id="dummyModeOnItem" mnemonicParsing="false" onAction="#handleDummyOn" text="Dummy mode on" />
+                  	</items>
+                  	<items>
+                  		<MenuItem fx:id="dummyModeOffItem" mnemonicParsing="false" onAction="#handleDummyOff" text="Dummy mode off" />
+                  	</items>
+                	<items>
+						<SeparatorMenuItem mnemonicParsing="false"/>
+					</items>
+                	<items>
+                  		<MenuItem fx:id="movesItem" mnemonicParsing="false" onAction="#showMoves" text="Show moves" />
+                  	</items>
+                  	<items>
+						<SeparatorMenuItem mnemonicParsing="false"/>
+					</items>
+                	<items>
+                    	<MenuItem fx:id="manualItem" mnemonicParsing="false" onAction="#handleManualExport" text="Show manual" />
+                  	</items>
+                	<items>
+                    	<MenuItem fx:id="rulesItem" mnemonicParsing="false" onAction="#handleRulesExport" text="Show rules" />
+                  	</items>
+                  	
+                </Menu>
+  			</menus>
+		</MenuBar>
+	</top>
+	<center>
+	<BorderPane maxHeight="540.0" maxWidth="535.0">
+		<top>
+			<HBox fx:id="topLabels" alignment="CENTER" prefHeight="10.0" maxHeight="10.0" prefWidth="500.0" BorderPane.alignment="BOTTOM_CENTER">
+				<children>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="a"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="b"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="c"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="d"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="e"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="f"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="g"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="h"/>
+				</children>
+			</HBox>
+		</top>
+		<left>
+			<VBox fx:id="leftLabels" alignment="CENTER_RIGHT" prefHeight="500.0" maxWidth="10.0" BorderPane.alignment="CENTER_LEFT" >
+				<children>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_RIGHT" text="8"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_RIGHT" text="7"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_RIGHT" text="6"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_RIGHT" text="5"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_RIGHT" text="4"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_RIGHT" text="3"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_RIGHT" text="2"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_RIGHT" text="1"/>
+				</children>
+			</VBox>
+		</left>
+		<center>
+		<GridPane fx:id="boardGrid" alignment="CENTER" maxHeight="500.0" maxWidth="500.0" prefHeight="500.0" prefWidth="500.0">
+			<columnConstraints>
+					  <ColumnConstraints hgrow="NEVER" maxWidth="62.5" minWidth="62.5" prefWidth="62.5" />
+						<ColumnConstraints hgrow="NEVER" maxWidth="62.5" minWidth="62.5" prefWidth="62.5" />
+						<ColumnConstraints hgrow="NEVER" maxWidth="62.5" minWidth="62.5" prefWidth="62.5" />
+						<ColumnConstraints hgrow="NEVER" maxWidth="62.5" minWidth="62.5" prefWidth="62.5" />
+						<ColumnConstraints hgrow="NEVER" maxWidth="62.5" minWidth="62.5" prefWidth="62.5" />
+						<ColumnConstraints hgrow="NEVER" maxWidth="62.5" minWidth="62.5" prefWidth="62.5" />
+						<ColumnConstraints hgrow="NEVER" maxWidth="62.5" minWidth="62.5" prefWidth="62.5" />
+						<ColumnConstraints hgrow="NEVER" maxWidth="62.5" minWidth="62.5" prefWidth="62.5" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints maxHeight="62.5" minHeight="62.5" prefHeight="62.5" vgrow="NEVER" />
+                      <RowConstraints maxHeight="62.5" minHeight="62.5" prefHeight="62.5" vgrow="NEVER" />
+                      <RowConstraints maxHeight="62.5" minHeight="62.5" prefHeight="62.5" vgrow="NEVER" />
+                      <RowConstraints maxHeight="62.5" minHeight="62.5" prefHeight="62.5" vgrow="NEVER" />
+                      <RowConstraints maxHeight="62.5" minHeight="62.5" prefHeight="62.5" vgrow="NEVER" />
+                      <RowConstraints maxHeight="62.5" minHeight="62.5" prefHeight="62.5" vgrow="NEVER" />
+                      <RowConstraints maxHeight="62.5" minHeight="62.5" prefHeight="62.5" vgrow="NEVER" />
+                      <RowConstraints maxHeight="62.5" minHeight="62.5" prefHeight="62.5" vgrow="NEVER" />
+                  </rowConstraints>
+			<children>
+            </children>
+		</GridPane>
+		</center>
+		<right>
+			<VBox fx:id="rightLabels" alignment="CENTER_RIGHT" prefHeight="500.0" maxWidth="10.0" >
+				<children>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_LEFT" text="8"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_LEFT" text="7"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_LEFT" text="6"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_LEFT" text="5"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_LEFT" text="4"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_LEFT" text="3"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_LEFT" text="2"/>
+					<Label maxHeight="62.5" minHeight="62.5" prefHeight="62.5" alignment="CENTER_LEFT" text="1"/>
+				</children>
+			</VBox>
+		</right>
+		<bottom>
+			<HBox fx:id="bottomLabels" alignment="CENTER" prefHeight="10.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+				<children>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="a"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="b"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="c"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="d"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="e"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="f"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="g"/>
+					<Label maxWidth="62.5" minWidth="62.5" prefWidth="62.5" alignment="CENTER" text="h"/>
+				</children>
+			</HBox>
+		</bottom>
+	</BorderPane>
+	</center>
+	<bottom>
+		<VBox alignment="CENTER" prefHeight="55.0" prefWidth="500.0" maxWidth="500.0" BorderPane.alignment="CENTER">
+			<children>
+				<HBox fx:id="editBar" alignment="CENTER" maxHeight="24.0" prefHeight="24.0" prefWidth="500.0" maxWidth="500.0" spacing="10.0" BorderPane.alignment="CENTER">
+					
+					<children>
+						<Button fx:id="goButton" onAction="#handleGo" text="" disable="true" />
+						<Button fx:id="stopButton" onAction="#handleStop" text="" />
+						<Button fx:id="stepBackButton" onAction="#handleStepBack" text="" />
+						<Button fx:id="stepForwardButton" onAction="#handleStepForward" text="" />
+						<Label fx:id="speedLabel"  text="speed:">
+						<padding>
+		                  	<Insets left="30.0" right="10.0" />
+		               	</padding></Label>
+		               	
+						<Slider fx:id="speedSlider" maxHeight="1.0" maxWidth="100.0" prefHeight="1.0" prefWidth="100.0">
+						<padding>
+		                  	<Insets top="0.0" />
+		               	</padding></Slider>
+						
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" minHeight="55.0" prefHeight="55.0" prefWidth="500.0" maxWidth="500.0" BorderPane.alignment="CENTER">
+					<children>
+						<Label fx:id="statusLabel" text="status:">
+		               	<padding>
+		                  	<Insets right="10.0" />
+		               	</padding></Label>
+						<Label fx:id="statusTextLabel" text="" />
+						<Region HBox.hgrow="ALWAYS" />
+						<Label alignment="CENTER_RIGHT" text="moves:">
+		               	<padding>
+		                  	<Insets right="10.0" />
+		               	</padding></Label>
+						<Label fx:id="moveCounter" alignment="CENTER_RIGHT" text="0" />
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	</bottom>
+</BorderPane>

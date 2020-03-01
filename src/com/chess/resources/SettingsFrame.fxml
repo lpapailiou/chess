@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="settingsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chess.application.SettingsController">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Game">
+					<items>
+						<MenuItem fx:id="exitItem" mnemonicParsing="false" onAction="#handleExit" text="Quit" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+                    	<MenuItem fx:id="manualItem" mnemonicParsing="false" onAction="#handleManualExport" text="Show manual" />
+                  	</items>
+					<items>
+						<MenuItem fx:id="rulesItem" mnemonicParsing="false" onAction="#handleRulesExport" text="Show rules" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<center>
+		<VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="500.0" spacing="20">
+			<children>
+				<Label fx:id="welcomeLabel" text="WELCOME" />
+				<Label fx:id="colorLabel" text="please choose color:" />
+				<RadioButton fx:id="whiteChoice" mnemonicParsing="false" onAction="#handleWhiteRadio" prefHeight="10.0" prefWidth="80.0" selected="true" text="white" />
+				<RadioButton fx:id="blackChoice" mnemonicParsing="false" onAction="#handleBlackRadio" prefHeight="10.0" prefWidth="80.0" text="black" />
+				<Label fx:id="ruleLabel" text="please choose rule set:" />
+				<HBox alignment="CENTER" prefHeight="10.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+					<children>
+						<Region prefWidth="70.0" />
+						<CheckBox fx:id="touchedRuleChoice" mnemonicParsing="false" onAction="#handleTouchedRuleChoice" prefHeight="10.0" prefWidth="200.0" selected="true" text="touched/moved" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="10.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+					<children>
+						<Region prefWidth="70.0" />
+						<CheckBox fx:id="enPassantRuleChoice" mnemonicParsing="false" onAction="#handleEnPassantRuleChoice" prefHeight="10.0" prefWidth="200.0" selected="true" text="en passant" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="10.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+					<children>
+						<Region prefWidth="70.0" />
+						<CheckBox fx:id="timeoutRuleChoice" mnemonicParsing="false" onAction="#handleTimeoutRuleChoice" prefHeight="10.0" prefWidth="200.0" selected="true" text="timeout" />
+					</children>
+				</HBox>
+				<Label fx:id="modeLabel" text="please choose mode:" />
+				<ComboBox fx:id="modeChoice" onAction="#handleModeChoice" prefHeight="25.0" prefWidth="250.0" />
+				<Label fx:id="difficultyLabel" text="set difficulty:" />
+				<Slider fx:id="difficultyChoice" snapToTicks="true" majorTickUnit="10.0" maxWidth="250.0" prefHeight="14.0" prefWidth="250.0" />
+				<VBox alignment="CENTER" prefHeight="10.0" prefWidth="500.0" spacing="5" BorderPane.alignment="CENTER">
+					<children>
+						<HBox alignment="CENTER" prefHeight="10.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+							<children>
+								<Button fx:id="loadButton" mnemonicParsing="false" onAction="#handleLoadButton" prefWidth="120.0" text="LOAD ... ?" />
+								<Region prefWidth="10.0" />
+								<Label fx:id="loadLabel" mnemonicParsing="false" prefWidth="120.0" text="nothing loaded" />
+							</children>
+						</HBox>
+						<Region prefWidth="10.0" />
+						<Button fx:id="startButton" mnemonicParsing="false" onAction="#handleStartButton" prefWidth="250.0" text="START GAME" />
+					</children>
+				</VBox>
+			</children>
+		</VBox>
+	</center>
+</BorderPane>

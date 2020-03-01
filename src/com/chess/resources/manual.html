@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Chess: user manual</title>
+		<style>
+			body { font-family: "Courier New"; padding: 50px; width: 1024px; margin: auto; box-sizing: border-box; }
+			li { padding: 0.8em; }
+			div { float left; box-sizing: border-box;}
+			h1, h2, h3 { width: 100%; clear: both; }
+			.p-wide { wdth: 100%; clear: both; }
+			.halfbox { width: 50%; float: left; padding: 15px;}
+			img { max-width: 100%; max-height: 100%; display: block; float:left; clear: both; }
+			.img-col-small { width: 150px; float: left; clear: both; }
+			.txt-col-small {padding-left: 150px;}
+			.img-col-medium { width: 220px; float: left; clear: right; }
+			.txt-col-medium {padding-left: 220px;}
+			.img-col-wider { width: 280px; float: left; clear: right; }
+			.txt-col-wider {padding-left: 280px;}
+			
+
+			@media only screen and (max-width: 1024px) {
+				.halfbox { width: 100%; }
+			}
+		</style>
+	</head>
+
+	<body>
+	
+	<h1>User manual</h1>
+	<div>
+		<h2>Before the game starts</h2>
+		<p>Before your game starts, you will get some fancy options
+		to adjust the gameplay. Let's go through from top to bottom.</p>
+	</div>
+
+	<div class="halfbox">
+		<img src="chess_screenshots_settings.png" alt="settings screen">
+	</div>
+	
+	<div class="halfbox">
+		<h3>the menu</h3>
+		<div class="img-col-small">
+			<img src="chess_screenshots_settings_game.png" alt="settings screen: game menu">
+		</div>
+		<div>
+			<p class="txt-col-small"><b>Game menu:</b> If you click on 'game' you get the possibility to quit already now. Do not even think about it.</p>
+		</div>
+		<div class="img-col-small">
+			<img src="chess_screenshots_settings_help.png" alt="settings screen: help menu">
+		</div>
+		<div>
+			<p class="txt-col-small"><b>Help menu:</b> The help menu will allow you to show this pretty page (what a pleasure). Also, it has a page for chess rules in general.</p>
+		</div>	
+	</div>
+	<div class="halfbox">
+		<h3>the color choice</h3>
+		<div class="img-col-medium">
+			<img src="chess_screenshots_settings_color.png" alt="settings screen: color choice">
+		</div>
+		<div>
+			<p class="txt-col-medium">
+			Now hold your horses: you get to choose the color of your pieces! Wait, WHAT?
+			</p>
+		</div>
+		<div>
+			<p class="txt-col-medium">
+			Okay, thing is: the white pieces always start. Never mind. If 'white' 
+			is chosen, the white pieces will start at the bottom and play upwards, the black pieces start from top and play to the bottom. 
+			If 'black' is chosen, <i>vice versa</i> that thing.
+			</p>
+		</div>
+	</div>
+	<div >
+		<h3>the rule set</h3>
+		<div class="img-col-medium">
+			<img src="chess_screenshots_settings_rules.png" alt="settings screen: rule sets to choose">
+		</div>
+		<div>
+			<p class="txt-col-medium">
+			I know, where 'you come from', you 'don't do it like that'. Okay. Let's make you happy, you can play like 'people' play where you come from. <br>
+			<ul class="txt-col-medium">
+				<li><b>touched/moved: </b>now, if this guy is on, you will be forced to move a chess piece if you touched it before. No 'ah no, let's try another maybe'.</li>
+				<li><b>en passant: </b>special pawn hit - better check rules on this one.</li>
+				<li><b>timeout: </b>this guy will end the game if a board situation happens about three times or 50 irrelevant moves are made.</li>
+			</ul>
+				
+			</p>
+		</div>
+	</div>
+	<div>
+		<h3>the game mode</h3>
+		<div class="img-col-wider">
+			<img src="chess_screenshots_settings_mode.png" alt="settings screen: game mode choice">
+		</div>
+		<div>
+			<p class="txt-col-wider">
+			Now it gets interesting. This option lets you play with the ai. If you like, you can also play with a friend on the same computer (of course you <i>have</i> friends).
+			Or you can challenge both ai bots (and maybe learn something).
+			</p>
+		</div>
+	</div>
+	
+	<div>
+		<h3>the difficulty</h3>
+		<div class="img-col-wider">
+			<img src="chess_screenshots_settings_difficulty.png" alt="settings screen: difficulty settings">
+		</div>
+		<div>
+			<p class="txt-col-wider">
+			Wow... now you know there's an ai (WOW). It might be smarter than you. Good for you that we thought about that already. We want to make you happy, so
+			you get the possibility to lower the difficulty. But don't go brag afterwards.
+			</p>
+		</div>
+	</div>
+	
+	<div>
+		<h3>the loading</h3>
+		<div class="img-col-wider">
+			<img src="chess_screenshots_settings_load.png" alt="settings screen: loading existing game">
+		</div>
+		<div>
+			<p class="txt-col-wider">
+			In case you would like to load an existing game, use this nice little button here. Clicking it will open a dialog, where you can either enter a FEN or PGN code or upload a PGN file. Nice.
+			</p>
+		</div>
+	</div>
+	
+	<div>
+		<h3>the game</h3>
+		<div class="img-col-wider">
+			<img src="chess_screenshots_settings_start.png" alt="settings screen: starting the game">
+		</div>
+		<div>
+			<p class="txt-col-wider">
+			ARE YOU READY? Yeah! Then let's start the game by pushing this big ass button.
+			</p>
+		</div>
+	</div>
+	
+	<div>
+		<h2>During the game</h2>
+		<p>How exciting! Now we're ready to play! <br> Okay I guess you know how a chess board looks like. Let's have a look at the other stuff.</p>
+	</div>
+	<div class="halfbox">
+		<img src="chess_screenshots_game.png" alt="game screen">
+	</div>
+
+	<div class="halfbox">
+		<h3>the menu</h3>
+		<div class="img-col-small">
+			<img src="chess_screenshots_game_game.png" alt="game screen: game menu">
+		</div>
+		<div>
+			<p class="txt-col-small"><b>Game menu:</b> New stuff here! Click on 'new game' to go back to the settings screen. 
+			Here you will get new fancy choices. Your running game will be trashed though. If you want a new game with the current settings, 
+			just click on 'restart game'. <br><br>
+			In the middle section, we have options to copy the FEN or PGN code of your current game directly to your clipboard.<br>
+			Alternatively, you can of course also export a PGN file (will go to your temp files).<br>
+			If you click 'copy board', a screenshot of the board will be clipped to your clipboard.<br><br>
+			Or quit. Like a quitter.</p>
+		</div>
+		<div class="img-col-small">
+			<img src="chess_screenshots_game_edit.png" alt="game screen: editing menu">
+		</div>
+		<div>
+			<p class="txt-col-small"><b>Edit menu:</b> Here you can rotate the board, if the game is not confusing enough for you already.<br><br>
+			AND, there is an edit mode. WOW. We'll get back to that later.</p>
+		</div>	
+		<div class="img-col-small">
+			<img src="chess_screenshots_game_help.png" alt="game screen: help menu">
+		</div>
+		<div>
+			<p class="txt-col-small"><b>Help menu:</b> The dummy mode will highlight the fields a piece can go to, as soon as you touch it.<br><br>
+			Apart from this pretty manual and the chess rules, you can also have a look at the moves of the current game by using 'Show moves'.</p>
+		</div>	
+	</div>
+	<div>
+		<h3>the status bar</h3>
+		<div>
+			<img src="chess_screenshots_game_status.png" alt="game screen: status bar">
+		</div>
+		<div>
+			<p class="p-wide">
+			In case you forget if it's your turn or not, this guy will show you. He will let you also know when you lost and how many moves were made. 
+			<br><b>Pro tip:</b> click on the status label to see the last move flashing up. If you want to see which pieces you can move, click on the status text.
+			<br>Also: chess moves are counted as 'half moves'.
+			</p>
+		</div>
+	</div>
+	<div>
+		<h3>the edit mode</h3>
+		<div>
+			<img src="chess_screenshots_game_editMode.png" alt="game screen: edit mode">
+		</div>
+		<div>
+			<p class="p-wide">
+			Look at this. You can also edit your moves (or analyze the game) by using this nice feature. </p>
+			<ul>
+				<li><b>pause: </b>hit this and editing will be enabled.</li>
+				<li><b>play: </b>this one basically means 'resume game', so the edit mode will be blocked. It will also clear future moves in case there were some.</li>
+				
+				<li><b>step back: </b>step back.</li>
+				<li><b>step forward: </b>step forward. Get it?</li>
+				<li><b>speed: </b>have a little control over the speed. This will only make sense if a bot is active.</li>
+			</ul>
+			
+		</div>
+	</div>
+	
+	<div>
+		<h2>The gameplay</h2>
+		<div>
+			<p>
+			Whoopsie. Remembered you dont know how to play yet. You basically have two possibilites:
+			<ul>
+				<li><b>click: </b>click the piece you want to move and then click on the field you want to go to.</li>
+				<li><b>drag'n'drop: </b>drag the piece you like to the field you like. Simple as that.</li>
+			</ul>
+			</p>
+		</div>
+	</div>
+	
+	<div>
+		<h3>show hints</h3>
+		<div>
+			<p class="p-wide">
+			One more thing: if you forgot how this game works and feel too lazy about having a look at the rules, just right-click on one of your pieces, then some nice hints will flash up.
+			</p>
+		</div>
+		<div>
+			<img src="chess_screenshots_gameplay_hint.png" alt="game screen: gameplay, showing hints">
+		</div>
+	</div>
+	
+	<div>
+		<p class="p-wide">Okay, now go and have some fun.</p>
+	</div>
+	</body>
+</html>

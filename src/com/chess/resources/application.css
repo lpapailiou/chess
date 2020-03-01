@@ -1,0 +1,190 @@
+* {
+	-fx-dark-text-color: #070200;
+    -fx-mid-text-color: #691900;
+    -fx-light-text-color: white;
+    -fx-base: ffd7c9; /* fff4f0-fx-alignment: lightest */
+    -fx-hover-base: lightsalmon; /* ffe6dc slightly darker */
+    -fx-pressed-base: ff763f; /* fff4f0 ffd7c9 bit darker */
+    -fx-dark-accent: ff8453; /* ff8453 */
+    
+    -fx-focus-color: ff748c; /*ff7a97 ff748c */
+    -fx-inner-border: -fx-hover-base; 
+    -fx-faint-focus-color: transparent;
+	
+    -fx-selection-bar: ffe6dc;
+    -fx-cell-focus-inner-border: ffa1ab; /* ffaa90-fx-alignment: almost red */
+    -fx-accent: lightsalmon;
+}
+
+.root{
+    -fx-font-family: "Courier New";
+    -fx-background-color: transparent;
+}
+
+.dialog-pane,
+.dialog-pane:header .header-panel {
+    -fx-background-color: transparent;
+}
+ 
+.menu-bar {
+    -fx-background-color: white;
+    -fx-padding: 3px;
+}
+
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing {
+	/*-fx-background-color: bisque; */
+    -fx-background-color: -fx-accent;
+    -fx-font-size: 9pt;
+}
+
+.menu-bar > .container > .menu-button {
+    -fx-background-radius: 10;
+}
+
+.menu-item:hover,
+.menu-item:focused,
+.menu-item:showing {
+     -fx-background-color: -fx-accent;
+}
+
+.combo-box-popup > .list-view,
+.context-menu {
+	-fx-padding: 4;
+    -fx-background-insets: 2, 1, 2;
+    -fx-background-radius: 0 0 8 8, 0 0 7 7, 0 0 6 6;
+    -fx-border-color: white transparent transparent transparent;
+}
+
+
+.welcome-label {
+	-fx-font-weight: bold;
+	-fx-font-size: 30;
+	-fx-padding: 5px;
+}
+
+.settings-label {
+	-fx-font-size: 14;
+	-fx-padding: -5px;
+}
+
+.player-radios {
+	-fx-font-size: 16;
+	-fx-font-weight: bold;
+	-fx-cursor: hand;	
+}
+
+.cursor-hand {
+	-fx-cursor: hand;
+}
+
+#modeChoice, #board {
+	-fx-font-size: 14;
+	-fx-font-weight: bold;
+	-fx-padding: 5px;
+	-fx-cursor: hand;	
+}
+
+#difficultyChoice, #speedSlider {
+	-fx-cursor: hand;
+}
+
+#statusTextLabel, #moveCounter {
+	-fx-font-weight: bold;
+	-fx-font-size: 18;
+}
+
+.button-default {
+	-fx-background-radius: 0;
+	-fx-font-weight: bold;
+	-fx-font-size: 20;
+	-fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+	-fx-effect: innershadow( gaussian , rgba(0,0,0,0.7) , 20,0,0,0 );
+	-fx-padding: 0;
+}
+
+
+
+.button-black {
+	-fx-background-color: #9b9b8c;
+}
+
+.button-black:hover {
+	-fx-background-color: #b2b2a0;
+}
+
+.button-black:pressed {
+	-fx-background-color: #f5f5dc;
+}
+
+.button-white {
+	-fx-background-color: #e0e0ce;
+}
+
+.button-white:hover {
+	-fx-background-color: #e6e6d5;
+}
+
+.button-white:pressed {
+	-fx-background-color: #f5f5dc;
+}
+
+.button-start {
+	-fx-padding: 15px;
+	-fx-font-size: 20;
+}
+
+.slider .thumb,
+.radio-button > .radio,
+.check-box > .box,
+.gui-control-default {
+	-fx-background-radius: 20;
+	-fx-font-weight: bold;
+	-fx-cursor: hand;
+	/*                            shadow   |     outer frame (not focused) | inner frame | background */
+	-fx-background-color: -fx-faint-focus-color, -fx-focus-color, -fx-inner-border, lightsalmon;
+}
+
+.slider .thumb:hover,
+.radio-button > .radio:hover,
+.check-box > .box:hover,
+.gui-control-default:hover {
+	-fx-background-color: -fx-faint-focus-color, -fx-focus-color, -fx-inner-border, -fx-dark-accent;
+}
+
+.slider .thumb:pressed,
+.radio-button > .radio:pressed,
+.check-box > .box:pressed,
+.gui-control-default:pressed {
+	-fx-background-color: -fx-faint-focus-color, -fx-focus-color, -fx-inner-border, -fx-pressed-base;
+}
+
+.slider .thumb:armed,
+.radio-button > .radio:armed,
+.check-box > .box:armed,
+.gui-control-default:armed {
+	-fx-background-color: -fx-faint-focus-color, -fx-focus-color, -fx-inner-border, -fx-pressed-base;
+}
+
+
+#speed .track {
+    -fx-padding: 3;
+}
+
+#speedSlider .thumb {
+    -fx-padding: 5;
+}
+
+#boardGrid {
+	-fx-background-color: #d9fedf;
+}
+
+#loadButton {
+	-fx-cursor: hand;
+}
+
+/*
+.button:hover{
+    -fx-cursor: CROSSHAIR;
+}*/
