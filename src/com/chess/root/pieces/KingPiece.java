@@ -150,7 +150,7 @@ public class KingPiece extends Piece {
 	
 	// ---------------------------------- ABSTRACT METHODS ----------------------------------
 
-	
+	@Override
 	public ArrayList<Move> getMoves() {
 		
 		ArrayList<Move> moves = new ArrayList<>();

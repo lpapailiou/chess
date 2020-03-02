@@ -1,9 +1,10 @@
 package com.chess.root;
 
-import static org.junit.Assert.assertNotNull;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
 
+import com.chess.application.Chess;
+import com.chess.application.GameController;
 import com.chess.model.Difficulty;
 import com.chess.model.Mode;
 import com.chess.model.PieceValues;
@@ -14,5 +15,6 @@ public class BoardTest {
 	
 	@Test
 	public void boardTest() {
+
 	}
 }
