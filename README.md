@@ -65,6 +65,7 @@ Example for LAN:
      e2-e4
 
 For importing and exporting games, the __FEN__ and __PGN__ notations are used. These notations are widely used for chess games.    
+  
 The __FEN__ notation is a very compact one-line-code for a current board situation. It is useful if a board state should be quickly copied to be recreated later and/or in another chess program.  
 Example for FEN: 
 
