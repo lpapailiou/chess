@@ -15,11 +15,13 @@ Also, games can be exported or imported in FEN or PGN.
 		1.2.4. [Thoughts about this project](#thoughts-about-this-project)  
 2. [Project structure](#project-structure)  
 3. [How to get it](#how-to-get-it)  
+	3.1 [How to import it to Intellij IDE](#how-to-import-it-to-intellij-ide)   
+	3.2 [How to import it to Eclipse IDE](#how-to-import-it-to-eclipse-ide)   
 4. [How to run it](#how-to-run-it)  
 	4.1 [Within the IDE](#within-the-ide)  
 	4.2 [From a Jar file](#from-a-jar-file)  
-		4.2.1 [Build Jar in Eclipse IDE](#build-jar-in-eclipse-ide)  
-		4.2.2 [Build Jar in Intellij IDE](#build-jar-in-intellij-ide)  
+		4.2.1 [Build Jar in Intellij IDE](#build-jar-in-intellij-ide)    
+		4.2.2 [Build Jar in Eclipse IDE](#build-jar-in-eclipse-ide)  
 		4.2.3 [Execute Jar](#execute-jar)  
 
 
@@ -108,9 +110,21 @@ Clone the repository with:
 
     git clone https://github.com/lpapailiou/chess your-target-path
 
-The project should automatically build with maven. 
-
 Originally, the project was developped with Eclipse. It also runs with the Intellij IDE.
+
+### How to import it to Intellij IDE
+1. Go to ``File > New``
+2. Pick ``Maven > Project from Existing Sources...``
+3. Now, navigate to the directory you cloned it to
+4. Select the ``pom.xml`` file and click ``OK``
+5. The project will be opened and build
+
+### How to import it to Eclipse IDE
+1. Go to ``File > Import``
+2. Pick ``Maven > Existing Maven Project``
+3. Now, navigate to the directory you cloned it to
+4. Pick the root directory ``chess`` and click ``Finish``
+5. The project will be opened and build
 
 ## How to run it
 
@@ -129,6 +143,15 @@ To fix it, do following steps:
 ### From a Jar file
 You can download the Jar file directly from the [artifacts folder](https://github.com/lpapailiou/chess/tree/master/classes/artifacts/chess_jar). Alternatively, you can build it yourself.
 
+#### Build Jar in Intellij IDE 
+1. Go to ``File > Project Structure...``
+2. Go to the ``Artifacts`` tab and add a new ``Jar > From module with dependencies`` entry
+3. Select the main class ``Chess`` (here, the main class is in)
+4. Click ``Ok`` twice
+5. Go to ``Build > Build Artifacts...``
+6. Select ``Build``
+7. The Jar file is now added to the ``target`` folder within the project structure
+
 #### Build Jar in Eclipse IDE
 1. Right click on the project
 2. Choose ``Export``
@@ -138,15 +161,6 @@ You can download the Jar file directly from the [artifacts folder](https://githu
 6. Export destination: the placee you want to save the Jar
 7. Choose ``Extract required libraries into generated JAR``
 8. Click ``Finish`` to start the Jar generation
-
-#### Build Jar in Intellij IDE 
-1. Go to ``File > Project Structure...``
-2. Go to the ``Artifacts`` tab and add a new ``Jar > From module with dependencies`` entry
-3. Select the main class ``Chess`` (here, the main class is in)
-4. Click ``Ok`` twice
-5. Go to ``Build > Build Artifacts...``
-6. Select ``Build``
-7. The Jar file is now added to the ``target`` folder within the project structure
 
 #### Execute Jar
 Double click on the Jar file directly. 
