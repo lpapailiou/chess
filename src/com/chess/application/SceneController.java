@@ -67,17 +67,17 @@ public abstract class SceneController implements Initializable {
 
 	protected void startNewGame(SettingsController init, Stage stage, Setting settings) {
 		try {   	
-				FXMLLoader loadFrame = new FXMLLoader(GameController.class.getClassLoader().getResource("com/chess/resources/GameFrame.fxml"));
-				Parent mainRoot = loadFrame.load();
-				Scene scene = new Scene(mainRoot, 550, 630);
-				scene.getStylesheets().add(GameController.class.getClassLoader().getResource("com/chess/resources/application.css").toExternalForm());
-				stage.setScene(scene);	
-		GameController controller = loadFrame.getController();
-		controller.initializeProxy(init, settings);
-		if (!settings.getColor()) {
+			FXMLLoader loadFrame = new FXMLLoader(GameController.class.getClassLoader().getResource("com/chess/resources/GameFrame.fxml"));
+			Parent mainRoot = loadFrame.load();
+			Scene scene = new Scene(mainRoot, 550, 630);
+			scene.getStylesheets().add(GameController.class.getClassLoader().getResource("com/chess/resources/application.css").toExternalForm());
+			stage.setScene(scene);	
+			GameController controller = loadFrame.getController();
+			controller.initializeProxy(init, settings);
+			if (!settings.getColor()) {
 				controller.handleRotate();
 			}
-		stage.show();  
+			stage.show();  
 		} catch (Exception e) {
 			LOG.log(Level.SEVERE, Arrays.deepToString(e.getStackTrace()));
 		}

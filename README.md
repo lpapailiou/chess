@@ -158,7 +158,7 @@ You can download the Jar file directly from the [artifacts folder](https://githu
 3. Go to ``Java > Runnable JAR file``
 4. Click ``Next``
 5. Launch configuration: choose ``Chess`` (here, the main class is in)
-6. Export destination: the placee you want to save the Jar
+6. Export destination: the place you want to save the Jar
 7. Choose ``Extract required libraries into generated JAR``
 8. Click ``Finish`` to start the Jar generation
 
