@@ -15,15 +15,6 @@ Also, games can be exported or imported in FEN or PGN.
 		1.2.4. [Thoughts about this project](#thoughts-about-this-project)  
 2. [Project structure](#project-structure)  
 3. [How to get it](#how-to-get-it)  
-	3.1 [How to import it to Intellij IDE](#how-to-import-it-to-intellij-ide)   
-	3.2 [How to import it to Eclipse IDE](#how-to-import-it-to-eclipse-ide)   
-4. [How to run it](#how-to-run-it)  
-	4.1 [Within the IDE](#within-the-ide)  
-	4.2 [From a Jar file](#from-a-jar-file)  
-		4.2.1 [Build Jar in Intellij IDE](#build-jar-in-intellij-ide)    
-		4.2.2 [Build Jar in Eclipse IDE](#build-jar-in-eclipse-ide)  
-		4.2.3 [Execute Jar](#execute-jar)  
-
 
 ## About the game
 ### Before you start the game
@@ -110,66 +101,4 @@ Clone the repository with:
 
     git clone https://github.com/lpapailiou/chess your-target-path
 
-Originally, the project was developped with Eclipse. It also runs with the Intellij IDE.
-
-### How to import it to Intellij IDE
-1. Go to ``File > New``
-2. Pick ``Maven > Project from Existing Sources...``
-3. Now, navigate to the directory you cloned it to
-4. Select the ``pom.xml`` file and click ``OK``
-5. The project will be opened and build
-
-### How to import it to Eclipse IDE
-1. Go to ``File > Import``
-2. Pick ``Maven > Existing Maven Project``
-3. Now, navigate to the directory you cloned it to
-4. Pick the root directory ``chess`` and click ``Finish``
-5. The project will be opened and build
-
-## How to run it
-
-### Within the IDE
-You can directly run it within the IDE.
-
-In case you experience weird UI behavior (buttons look weird), it may be a DPI scaling issue known to occur with Windows 10 notebooks.
-To fix it, do following steps:
-1. Find the ``java.exe`` the game is running with (check Task Manager)
-2. Rightclick on the ``java.exe`` and go to ``Properties``
-3. Open the ``Compability`` tab
-4. Check ``Override high DPI scaling behavior``
-5. Choose ``System`` for ``Scaling performed by:``
-6. Run the game again
-
-### From a Jar file
-You can download the Jar file directly from the [artifacts folder](https://github.com/lpapailiou/chess/tree/master/classes/artifacts/chess_jar). Alternatively, you can build it yourself.
-
-#### Build Jar in Intellij IDE 
-1. Go to ``File > Project Structure...``
-2. Go to the ``Artifacts`` tab and add a new ``Jar > From module with dependencies`` entry
-3. Select the main class ``Chess`` (here, the main class is in)
-4. Click ``Ok`` twice
-5. Go to ``Build > Build Artifacts...``
-6. Select ``Build``
-7. The Jar file is now added to the ``target`` folder within the project structure
-
-#### Build Jar in Eclipse IDE
-1. Right click on the project
-2. Choose ``Export``
-3. Go to ``Java > Runnable JAR file``
-4. Click ``Next``
-5. Launch configuration: choose ``Chess`` (here, the main class is in)
-6. Export destination: the place you want to save the Jar
-7. Choose ``Extract required libraries into generated JAR``
-8. Click ``Finish`` to start the Jar generation
-
-#### Execute Jar
-Double click on the Jar file directly. 
-If nothing happens, you might need to add Java to your PATH variable.
-
-Alternatively, you can start the Jar file from the console with:
-
-    java -jar chess.jar
-    
-Please make sure you execute it from the correct directory. The naming of the Jar file may vary.
-
-<script src="https://gist.github.com/lpapailiou/d4d63338ccb1413363970ac571aa71c9.js"></script>
+For further help, click [here](https://gist.github.com/lpapailiou/d4d63338ccb1413363970ac571aa71c9).
