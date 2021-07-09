@@ -172,4 +172,4 @@ Alternatively, you can start the Jar file from the console with:
     
 Please make sure you execute it from the correct directory. The naming of the Jar file may vary.
 
-
+<script src="https://gist.github.com/lpapailiou/d4d63338ccb1413363970ac571aa71c9.js"></script>
